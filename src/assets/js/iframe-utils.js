@@ -1,5 +1,5 @@
 /**
- * Javascript file defining Iframe element util functions.
+ * Javascript file defining Iframe HTML element util functions.
  */
 (function () {
 
