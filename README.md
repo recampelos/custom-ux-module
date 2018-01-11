@@ -1,2 +1,2 @@
 # custom-ux-module
-Just a text for a custom Angular UX module
+Just a test for a custom Angular UX module
