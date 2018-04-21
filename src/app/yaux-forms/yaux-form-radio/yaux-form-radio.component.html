@@ -1,0 +1,11 @@
+<div *ngIf="!inline" class="checkbox">
+  <label>
+    <input type="checkbox" value="{{value}}" id="{{id}}" name={{name}}>
+    <yaux-yaux-form-label [for]="id" [translatioKey]="translationKey"></yaux-yaux-form-label>
+  </label>
+</div>
+<label *ngIf="inline" class="checkbox-inline">
+  <input type="checkbox" value="{{value}}" id="{{id}}" name={{name}}>
+  <yaux-yaux-form-label [for]="id" [translatioKey]="translationKey"></yaux-yaux-form-label>
+</label>
+<yaux-yaux-form-error-container [formControl]="formControl" [formElementTranslatioKey]="translationKey"></yaux-yaux-form-error-container>
