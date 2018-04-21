@@ -1,23 +1,79 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { YauxAbstractInputFormComponent } from '../shred/yaux-abstract-form-input-element';
-import { YausOrientation } from '../shred/model/yaux-orientation';
-import { YauxAbstractSelectComponent } from '../shred/yaux-abstract-form-input-select-element';
-import { Item } from '../shred/model/yaux-tem';
+import { Observable } from 'rxjs/Observable';
+
+import { YauxAbstractInputOrientedComponent } from '../shred/yaux-abstract-form-input-oriented-element';
+import { YauxTranslateKeyCreator } from '../../yaux-translate/shared/yaux-translate-key-creator';
+import {CheckBoxItem, Item} from '../shred/model/yaux-tem';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'yaux-form-checkbox-group',
   templateUrl: './yaux-form-checkbox-group.component.html',
   styleUrls: ['./yaux-form-checkbox-group.component.sass']
 })
-export class YauxFormCheckboxGroupComponent extends YauxAbstractSelectComponent implements OnInit {
+export class YauxFormCheckboxGroupComponent extends YauxAbstractInputOrientedComponent implements OnInit {
 
-  @Input() orientation: string;
+  @Input() items: CheckBoxItem[];
 
-  orientationTypes = YausOrientation;
+  @Input() itemsObservable: Observable<CheckBoxItem[]>;
 
-  selectedOption: Item;
+  internalFormGroup: FormGroup = new FormGroup({});
 
-  onCheckBoxClicked(): void {
+  ngOnInit() {
+    super.ngOnInit();
 
+    if (this.items.length === 0 && this.itemsObservable) {
+      this.itemsObservable.subscribe(
+        (items) => {
+          this.items = items;
+          this.processItems();
+        },
+        (error) => {
+          this.items = [];
+          console.log(error);
+        }
+      );
+    } else {
+      this.processItems();
+    }
+  }
+
+  protected processItems() {
+    if (this.items.length > 0) {
+      this.items.forEach((item) => {
+        if (item.key) {
+          item.checkBoxValue = item.value;
+
+          if (this.value && this.value.indexOf(item.value)) {
+            item.value = null;
+          }
+
+          this.internalFormGroup.setControl(item.key, new FormControl('', []));
+        }
+      });
+    }
+  }
+
+  onCheckBoxClicked(selItem: CheckBoxItem, value: any): void {
+    this.value = [];
+
+    this.items.forEach((item) => {
+      if (selItem.key === item.key) {
+        item.value = value;
+      }
+
+      if (item.value) {
+        this.value.push(item.value);
+      }
+    });
+
+    this.value = (this.value.length > 0) ? this.value : null;
+
+    if (this.hasValidation) {
+      this.formControl.markAsTouched();
+      this.formControl.setValue(this.value);
+    }
+
+    this.valueChange.emit(this.value);
   }
 }

@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class YauxFormLabelComponent implements OnInit {
 
-  @Input() translatioKey: string;
+  @Input() translationKey: string;
 
   @Input() for: string;
 

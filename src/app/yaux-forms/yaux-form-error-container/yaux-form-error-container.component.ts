@@ -11,7 +11,7 @@ export class YauxFormErrorContainerComponent implements OnInit {
 
   @Input() formElementControl: FormControl;
 
-  @Input() formElementTranslatioKey: string;
+  @Input() formElementTranslationKey: string;
 
   validators: string[] = [];
 

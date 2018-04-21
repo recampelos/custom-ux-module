@@ -1,12 +1,12 @@
 <yaux-form-element-wrapper [id]="id" [formGroup]="formGroup" [colSize]="colSize">
-  <div *ngIf="orientationTypes.VERTICAL === orientation">
-    <div *ngFor="let option of options" class="checkbox">
-      <label>
-        <input [value]="option.value" formControlName="{{formControlName}}" name="{{name}}" type="checkbox" id="{{id}}" (input)="onValueChange($event)">
-      </label>
-    </div>
+  <div>
+    <yaux-form-checkbox *ngFor="let item of items"
+                        [id]="item.key"
+                        [orientation]="orientation"
+                        [value]="item.value"
+                        [checkboxValue]="item.checkBoxValue"
+                        [formGroup]="internalFormGroup"
+                        (valueChange)="onCheckBoxClicked(item, $event)"
+    ></yaux-form-checkbox>
   </div>
-  <label *ngIf="orientationTypes.HRIZONTAL === orientation" class="checkbox-inline">
-    <input [value]="value" formControlName="{{formControlName}}" name="{{name}}" type="checkbox" id="{{id}}" (input)="onValueChange($event)">
-  </label>
 </yaux-form-element-wrapper>

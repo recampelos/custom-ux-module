@@ -14,8 +14,8 @@ import { YauxFormRadioComponent } from './yaux-form-radio/yaux-form-radio.compon
 import { YauxFormRadioGroupComponent } from './yaux-form-radio-group/yaux-form-radio-group.component';
 import { YauxFormSelectComponent } from './yaux-form-select/yaux-form-select.component';
 import { YauxFormElementWrapperComponent } from './yaux-form-element-wrapper/yaux-form-element-wrapper.component';
-import { YauxFormCheckboxGroupComponent } from './yaux-form-checkbox-group/yaux-form-checkbox-group.component';
 import { YauxFormCheckboxComponent } from './yaux-form-checkbox/yaux-form-checkbox.component';
+import { YauxFormCheckboxGroupComponent } from './yaux-form-checkbox-group/yaux-form-checkbox-group.component';
 
 @NgModule({
   imports: [
@@ -34,8 +34,8 @@ import { YauxFormCheckboxComponent } from './yaux-form-checkbox/yaux-form-checkb
     YauxFormSelectComponent,
     YauxFormLabelComponent,
     YauxFormElementWrapperComponent,
-    YauxFormCheckboxGroupComponent,
-    YauxFormCheckboxComponent
+    YauxFormCheckboxComponent,
+    YauxFormCheckboxGroupComponent
   ],
   exports: [
     YauxFormRowComponent,
@@ -47,8 +47,8 @@ import { YauxFormCheckboxComponent } from './yaux-form-checkbox/yaux-form-checkb
     YauxFormSelectComponent,
     YauxFormLabelComponent,
     YauxFormElementWrapperComponent,
-    YauxFormCheckboxGroupComponent,
-    YauxFormCheckboxComponent
+    YauxFormCheckboxComponent,
+    YauxFormCheckboxGroupComponent
   ]
 })
 export class YauxFormsModule { }
