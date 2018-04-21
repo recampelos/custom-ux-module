@@ -1,12 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <form formGroup="formGroup">
-  <!--yaux-yaux-form-row>
-    <yaux-yaux-form-input
+  <yaux-form-row>
+    <yaux-form-input
       [id]="'input'"
       [value]="model.myInput"
       [formGroup]="formGroup"
+      [colSize]=6
       (valueChange)="model.myInput = $event">
-    </yaux-yaux-form-input>
-  </yaux-yaux-form-row-->
+    </yaux-form-input>
+    <yaux-form-input
+      [id]="'input2'"
+      [value]="model.myInput2"
+      [formGroup]="formGroup"
+      [colSize]=6
+      (valueChange)="model.myInput2 = $event">
+    </yaux-form-input>
+  </yaux-form-row>
   <div>{{model | json}}</div>
 </form>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'yaux-yaux-form-row',
+  selector: 'yaux-form-row',
   templateUrl: './yaux-form-row.component.html',
   styleUrls: ['./yaux-form-row.component.sass']
 })

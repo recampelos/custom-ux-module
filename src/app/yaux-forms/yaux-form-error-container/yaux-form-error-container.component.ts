@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'yaux-yaux-form-error-container',
+  selector: 'yaux-form-error-container',
   templateUrl: './yaux-form-error-container.component.html',
   styleUrls: ['./yaux-form-error-container.component.sass']
 })
@@ -17,7 +17,7 @@ export class YauxFormErrorContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (this.formElementControl) {
+    if (this.formElementControl && this.formElementControl.validator) {
       Object.keys(this.formElementControl.validator(this.formElementControl)).forEach((key) => {
         this.validators.push(key);
       });

@@ -1,3 +1,4 @@
 <label for="{{for}}">
-  <yaux-yaux-translate-text [key]="translatioKey"></yaux-yaux-translate-text>
+  <yaux-translate-text [key]="translatioKey"></yaux-translate-text>
+  <yaux-translate-text *ngIf="!isRequired" [class]="'optional'" [key]="'form.optional.label'"></yaux-translate-text>
 </label>

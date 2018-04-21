@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { YauxAbstractInputFormComponent } from '../shred/yaux-abstract-form-element';
 
 @Component({
-  selector: 'yaux-yaux-form-input',
+  selector: 'yaux-form-input',
   templateUrl: './yaux-form-input.component.html',
   styleUrls: ['./yaux-form-input.component.sass']
 })
@@ -13,6 +13,8 @@ export class YauxFormInputComponent extends YauxAbstractInputFormComponent imple
 
   @Input() type = 'text';
 
+  model: string;
+
   constructor() {
     super();
   }
@@ -20,5 +22,4 @@ export class YauxFormInputComponent extends YauxAbstractInputFormComponent imple
   ngOnInit() {
     super.ngOnInit();
   }
-
 }

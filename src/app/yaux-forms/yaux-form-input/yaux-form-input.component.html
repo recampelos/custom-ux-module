@@ -1,8 +1,8 @@
 <div [formGroup]="formGroup" class="col-md-{{colSize}}">
   <div class="form-group">
-    <yaux-yaux-form-label [for]="id" [translatioKey]="translationKey"></yaux-yaux-form-label>
-    <input *ngIf="hasValidation" [value]="value" formControlName="{{formControlName}}" name="{{name}}" type="{{type}}" class="form-control" id="{{id}}" placeholder="{{placeholder}}" (change)="onValueChange()">
+    <yaux-form-label [isRequired]="isRequired" [for]="id" [translatioKey]="translationKey"></yaux-form-label>
+    <input *ngIf="hasValidation" [value]="value" formControlName="{{formControlName}}" name="{{name}}" type="{{type}}" class="form-control" id="{{id}}" placeholder="{{placeholder}}" (input)="onValueChange($event)">
     <input *ngIf="!hasValidation" name="{{name}}" value="{{value}}" type="{{type}}" id="{{id}}" placeholder="{{placeholder}}" class="form-control">
-    <yaux-yaux-form-error-container [formElementControl]="formControl" [formElementTranslatioKey]="translationKey"></yaux-yaux-form-error-container>
+    <yaux-form-error-container [formElementControl]="formControl" [formElementTranslatioKey]="translationKey"></yaux-form-error-container>
   </div>
 </div>

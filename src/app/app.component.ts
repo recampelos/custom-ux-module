@@ -12,11 +12,13 @@ export class AppComponent implements OnInit {
     input: new FormControl('', [
       Validators.required,
       Validators.email
-    ])
+    ]),
+    input2: new FormControl('', [])
   });
 
   model = {
-    myInput: 'Some value'
+    myInput: 'Some value',
+    myInput2: 'Input 2'
   };
 
   ngOnInit(): void {

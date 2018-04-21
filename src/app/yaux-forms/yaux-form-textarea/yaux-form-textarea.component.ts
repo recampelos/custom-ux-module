@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { YauxAbstractInputFormComponent } from '../shred/yaux-abstract-form-element';
 
 @Component({
-  selector: 'yaux-yaux-form-textarea',
+  selector: 'yaux-form-textarea',
   templateUrl: './yaux-form-textarea.component.html',
   styleUrls: ['./yaux-form-textarea.component.sass']
 })

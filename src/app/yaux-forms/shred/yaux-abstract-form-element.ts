@@ -24,18 +24,31 @@ export class YauxAbstractInputFormComponent implements OnInit {
 
   hasValidation: boolean;
 
+  isRequired = false;
+
   ngOnInit(): void {
-    this.hasValidation = (this.formControl !== null);
+    this.hasValidation = (this.formGroup !== null);
     this.name = (this.name || this.id);
     this.formControlName = (this.formControlName || this.id);
     this.translationKey = (this.translationKey || 'form.element.label.' + this.id);
 
     if (this.hasValidation) {
       this.formControl = this.formGroup.get(this.formControlName) as FormControl;
+
+      if (this.formControl && this.formControl.validator) {
+        Object.keys(this.formControl.validator(this.formControl)).forEach((key) => {
+          console.log(key);
+
+          if ('required' === key) {
+            this.isRequired = true;
+          }
+        });
+      }
     }
   }
 
-  onValueChange(): void {
+  onValueChange(event): void {
+    this.value = event.target.value;
     this.valueChange.emit(this.value);
   }
 }

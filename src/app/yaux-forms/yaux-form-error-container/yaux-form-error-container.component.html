@@ -1,7 +1,9 @@
-<div *ngIf="validators.length > 0 && formElementControl.invalid">
-  <div *ngFor="let validator of validators" class="error-color">
-    <yaux-yaux-translate-text [key]="formElementTranslatioKey"></yaux-yaux-translate-text>
-    <span> </span>
-    <yaux-yaux-translate-text [key]="'form.' + validator + '.error.message'"></yaux-yaux-translate-text>
+<div *ngIf="validators.length > 0 && formElementControl.invalid && (formElementControl.touched || formElementControl.dirty)">
+  <div *ngFor="let validator of validators" class="error-message">
+    <div *ngIf="formElementControl.errors[validator]">
+      <yaux-translate-text [key]="formElementTranslatioKey"></yaux-translate-text>
+      <span> </span>
+      <yaux-translate-text [key]="'form.' + validator + '.error.message'"></yaux-translate-text>
+    </div>
   </div>
 </div>

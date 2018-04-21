@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { YauxFormsModule } from './yaux-forms/yaux-forms.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    YauxFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
