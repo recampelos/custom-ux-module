@@ -60,3 +60,4 @@ typings/
 # Angular CLI Build dirctory
 dist/
 build/
+.idea/
