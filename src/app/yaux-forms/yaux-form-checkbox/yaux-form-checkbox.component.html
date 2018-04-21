@@ -1,3 +1,10 @@
-<p>
-  yaux-form-radio-checkbox works!
-</p>
+<div *ngIf="orientationTypes.VERTICAL === orientation" class="checkbox" [formGroup]="formGroup">
+  <label>
+    <input formControlName="{{formControlName}}" value="{{checkboxValue}}" [checked]="checked" name="{{name}}" type="checkbox" id="{{id}}" (click)="onValueChange($event)">
+    <yaux-translate-text [key]="translatioKey"></yaux-translate-text>
+  </label>
+</div>
+<label *ngIf="orientationTypes.HRIZONTAL === orientation" class="checkbox-inline" [formGroup]="formGroup">
+  <input formControlName="{{formControlName}}" value="{{checkboxValue}}" [checked]="checked" name="{{name}}" type="checkbox" id="{{id}}" (click)="onValueChange($event)">
+  <yaux-translate-text [key]="translationKey"></yaux-translate-text>
+</label>

@@ -12,9 +12,10 @@ import { YauxFormRowComponent } from './yaux-form-row/yaux-form-row.component';
 import { YauxFormTextareaComponent } from './yaux-form-textarea/yaux-form-textarea.component';
 import { YauxFormRadioComponent } from './yaux-form-radio/yaux-form-radio.component';
 import { YauxFormRadioGroupComponent } from './yaux-form-radio-group/yaux-form-radio-group.component';
-import { YauxFormCheckboxComponent } from './yaux-form-checkbox/yaux-form-checkbox.component';
 import { YauxFormSelectComponent } from './yaux-form-select/yaux-form-select.component';
 import { YauxFormElementWrapperComponent } from './yaux-form-element-wrapper/yaux-form-element-wrapper.component';
+import { YauxFormCheckboxGroupComponent } from './yaux-form-checkbox-group/yaux-form-checkbox-group.component';
+import { YauxFormCheckboxComponent } from './yaux-form-checkbox/yaux-form-checkbox.component';
 
 @NgModule({
   imports: [
@@ -30,10 +31,11 @@ import { YauxFormElementWrapperComponent } from './yaux-form-element-wrapper/yau
     YauxFormTextareaComponent,
     YauxFormRadioGroupComponent,
     YauxFormRadioComponent,
-    YauxFormCheckboxComponent,
     YauxFormSelectComponent,
     YauxFormLabelComponent,
-    YauxFormElementWrapperComponent
+    YauxFormElementWrapperComponent,
+    YauxFormCheckboxGroupComponent,
+    YauxFormCheckboxComponent
   ],
   exports: [
     YauxFormRowComponent,
@@ -42,10 +44,11 @@ import { YauxFormElementWrapperComponent } from './yaux-form-element-wrapper/yau
     YauxFormTextareaComponent,
     YauxFormRadioGroupComponent,
     YauxFormRadioComponent,
-    YauxFormCheckboxComponent,
     YauxFormSelectComponent,
     YauxFormLabelComponent,
-    YauxFormElementWrapperComponent
+    YauxFormElementWrapperComponent,
+    YauxFormCheckboxGroupComponent,
+    YauxFormCheckboxComponent
   ]
 })
 export class YauxFormsModule { }

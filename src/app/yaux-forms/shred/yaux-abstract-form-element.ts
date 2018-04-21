@@ -33,8 +33,6 @@ export class YauxAbstractFormComponent implements OnInit {
 
       if (this.formControl && this.formControl.validator) {
         Object.keys(this.formControl.validator(this.formControl)).forEach((key) => {
-          console.log(key);
-
           if ('required' === key) {
             this.isRequired = true;
           }

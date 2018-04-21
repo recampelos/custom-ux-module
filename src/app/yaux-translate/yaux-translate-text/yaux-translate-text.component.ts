@@ -14,7 +14,6 @@ export class YauxTranslateTextComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.key);
   }
 
 }

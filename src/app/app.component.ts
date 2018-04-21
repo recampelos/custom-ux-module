@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   });
 
   model = {
-    myInput: 'Some value',
+    myInput: true,
     myInput2: 'Input 2',
     myInput3: null
   };

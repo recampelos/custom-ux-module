@@ -41,12 +41,7 @@ export class YauxAbstractSelectComponent extends YauxAbstractInputFormComponent 
     }
   }
 
-  private processItems() {
-    this.options.push({
-      key: YauxTranslateKeyCreator.createFormLabelKey('defaultOpition'),
-      value: null
-    });
-
+  protected processItems() {
     if (this.items.length > 0) {
       this.items.forEach((item) => {
         if (item.key) {

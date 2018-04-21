@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { YauxFormRadioCheckboxComponent } from './yaux-form-radio-checkbox.component';
+import { YauxFormCheckboxComponent } from './yaux-form-checkbox.component';
 
-describe('YauxFormRadioCheckboxComponent', () => {
-  let component: YauxFormRadioCheckboxComponent;
-  let fixture: ComponentFixture<YauxFormRadioCheckboxComponent>;
+describe('YauxFormCheckboxComponent', () => {
+  let component: YauxFormCheckboxComponent;
+  let fixture: ComponentFixture<YauxFormCheckboxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ YauxFormRadioCheckboxComponent ]
+      declarations: [ YauxFormCheckboxComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(YauxFormRadioCheckboxComponent);
+    fixture = TestBed.createComponent(YauxFormCheckboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
