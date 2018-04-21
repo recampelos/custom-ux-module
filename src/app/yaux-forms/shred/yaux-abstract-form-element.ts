@@ -1,6 +1,5 @@
-import { Input, OnInit, Output } from '@angular/core';
+import { Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { EventEmitter } from 'protractor';
 
 
 export class YauxAbstractInputFormComponent implements OnInit {
@@ -19,7 +18,7 @@ export class YauxAbstractInputFormComponent implements OnInit {
 
   @Input() formControlName: string;
 
-  @Output() valueChange = new EventEmitter();
+  @Output() valueChange = new EventEmitter<any>();
 
   formControl: FormControl = null;
 
