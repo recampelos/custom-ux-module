@@ -1,3 +1,8 @@
-<p>
-  yaux-form-select works!
-</p>
+<yaux-form-element-wrapper [id]="id" [formGroup]="formGroup" [colSize]="colSize">
+  <select class="form-control" formControlName={{formControlName}} name="{{name}}" value="{{value}}" id="{{id}}" [multiple]="multiple" (change)="onValueChange($event)">
+    <option *ngFor="let option of options" value="{{option.value}}">
+      <yaux-translate-text *ngIf="option.key" [key]="option.key"></yaux-translate-text>
+      <span *ngIf="!option.key">{{option.label}}</span>
+    </option>
+  </select>
+</yaux-form-element-wrapper>

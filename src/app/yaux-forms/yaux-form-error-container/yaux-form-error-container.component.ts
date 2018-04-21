@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { YauxTranslateKeyCreator } from '../../yaux-translate/shared/yaux-translate-key-creator';
 
 @Component({
   selector: 'yaux-form-error-container',
@@ -22,5 +23,9 @@ export class YauxFormErrorContainerComponent implements OnInit {
         this.validators.push(key);
       });
     }
+  }
+
+  createValidationErrorMessageKey(validatior: string): string {
+    return YauxTranslateKeyCreator.createValidationLabelKey(validatior);
   }
 }

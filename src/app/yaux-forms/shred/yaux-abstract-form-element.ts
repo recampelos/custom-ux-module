@@ -1,14 +1,11 @@
 import { Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { YauxTranslateKeyCreator } from '../../yaux-translate/shared/yaux-translate-key-creator';
 
 
-export class YauxAbstractInputFormComponent implements OnInit {
+export class YauxAbstractFormComponent implements OnInit {
 
   @Input() id: string;
-
-  @Input() name: string;
-
-  @Input() value: any;
 
   @Input() translationKey: string;
 
@@ -28,9 +25,8 @@ export class YauxAbstractInputFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.hasValidation = (this.formGroup !== null);
-    this.name = (this.name || this.id);
     this.formControlName = (this.formControlName || this.id);
-    this.translationKey = (this.translationKey || 'form.element.label.' + this.id);
+    this.translationKey = (this.translationKey || YauxTranslateKeyCreator.createFormLabelKey(this.id));
 
     if (this.hasValidation) {
       this.formControl = this.formGroup.get(this.formControlName) as FormControl;
@@ -45,10 +41,5 @@ export class YauxAbstractInputFormComponent implements OnInit {
         });
       }
     }
-  }
-
-  onValueChange(event): void {
-    this.value = event.target.value;
-    this.valueChange.emit(this.value);
   }
 }

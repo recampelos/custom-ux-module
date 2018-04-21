@@ -1,8 +1,4 @@
-<div class="col-md-{{colSize}}">
-  <div class="form-group">
-    <yaux-form-label [for]="id" [translatioKey]="translationKey"></yaux-form-label>
-    <textarea *ngIf="formControl" [(ngModel)]="model" formControl="formControlName" [rows]="rows" class="form-control" id="{{id}}"></textarea>
-    <textarea *ngIf="!formControl" id="{{id}}" [rows]="rows" class="form-control">{{model}}</textarea>
-    <yaux-form-error-container [formControl]="formControl" [formElementTranslatioKey]="translationKey"></yaux-form-error-container>
-  </div>
-</div>
+<yaux-form-element-wrapper [id]="id" [formGroup]="formGroup" [colSize]="colSize">
+  <textarea *ngIf="formControl" [value]="value" formControlName="{{formControlName}}" rows="{{rows}}" class="form-control" id="{{id}}" (input)="onValueChange($event)"></textarea>
+  <textarea *ngIf="!formControl" id="{{id}}" [rows]="rows" class="form-control"></textarea>
+</yaux-form-element-wrapper>

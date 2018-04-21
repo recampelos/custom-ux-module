@@ -3,7 +3,7 @@
     <div *ngIf="formElementControl.errors[validator]">
       <yaux-translate-text [key]="formElementTranslatioKey"></yaux-translate-text>
       <span> </span>
-      <yaux-translate-text [key]="'form.' + validator + '.error.message'"></yaux-translate-text>
+      <yaux-translate-text [key]="createValidationErrorMessageKey(validator)"></yaux-translate-text>
     </div>
   </div>
 </div>

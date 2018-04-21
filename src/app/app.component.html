@@ -1,20 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <form formGroup="formGroup">
   <yaux-form-row>
-    <yaux-form-input
+    <yaux-form-textarea
       [id]="'input'"
       [value]="model.myInput"
       [formGroup]="formGroup"
       [colSize]=6
+      [rows]=10
       (valueChange)="model.myInput = $event">
-    </yaux-form-input>
-    <yaux-form-input
+    </yaux-form-textarea>
+    <!--yaux-form-input
       [id]="'input2'"
       [value]="model.myInput2"
       [formGroup]="formGroup"
       [colSize]=6
       (valueChange)="model.myInput2 = $event">
-    </yaux-form-input>
+    </yaux-form-input-->
+  </yaux-form-row>
+  <yaux-form-row>
+    <yaux-form-select
+        [itemsObservable]="getItemsObservable()"
+        [id]="'input3'"
+        [value]="model.myInput3"
+        [formGroup]="formGroup"
+        (valueChange)="model.myInput3 = $event">
+    </yaux-form-select>
   </yaux-form-row>
   <div>{{model | json}}</div>
 </form>

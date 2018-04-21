@@ -1,0 +1,7 @@
+<div [formGroup]="formGroup" class="col-md-{{colSize}}">
+  <div class="form-group">
+    <yaux-form-label [isRequired]="isRequired" [for]="id" [translatioKey]="translationKey"></yaux-form-label>
+    <ng-content></ng-content>
+    <yaux-form-error-container [formElementControl]="formControl" [formElementTranslatioKey]="translationKey"></yaux-form-error-container>
+  </div>
+</div>
