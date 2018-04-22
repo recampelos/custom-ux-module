@@ -10,14 +10,6 @@ export class YauxAbstractInputFormComponent extends YauxAbstractFormComponent im
 
   @Input() value: any;
 
-  @Output() valueChange = new EventEmitter<any>();
-
-  formControl: FormControl = null;
-
-  hasValidation: boolean;
-
-  isRequired = false;
-
   onValueChange(event): void {
     this.value = event.target.value;
     this.valueChange.emit(this.value);

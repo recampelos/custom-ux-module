@@ -18,7 +18,7 @@ export class YauxFormErrorContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (this.formElementControl && this.formElementControl.validator) {
+    if (this.formElementControl && this.formElementControl.validator && this.formElementControl.validator(this.formElementControl)) {
       Object.keys(this.formElementControl.validator(this.formElementControl)).forEach((key) => {
         this.validators.push(key);
       });

@@ -1,0 +1,16 @@
+<div>
+  <div class="row title-container">
+    <div class="col-md-12">
+      <h3 data-toggle="collapse" [attr.data-target]="'#' + id" class="title" (click)="isOpen = !isOpen">
+        <yaux-translate-text [key]="titleTranslationKey"></yaux-translate-text>
+        <i class="fas fa-caret-down" *ngIf="!isOpen"></i>
+        <i class="fas fa-caret-up" *ngIf="isOpen"></i>
+      </h3>
+    </div>
+  </div>
+  <div class="horizontal-ruler"></div>
+  <div id="{{id}}" class="collapse in">
+    <ng-content></ng-content>
+    <div class="horizontal-ruler"></div>
+  </div>
+</div>

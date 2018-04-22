@@ -16,6 +16,7 @@ import { YauxFormSelectComponent } from './yaux-form-select/yaux-form-select.com
 import { YauxFormElementWrapperComponent } from './yaux-form-element-wrapper/yaux-form-element-wrapper.component';
 import { YauxFormCheckboxComponent } from './yaux-form-checkbox/yaux-form-checkbox.component';
 import { YauxFormCheckboxGroupComponent } from './yaux-form-checkbox-group/yaux-form-checkbox-group.component';
+import { YauxFormSectionComponent } from './yaux-form-section/yaux-form-section.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { YauxFormCheckboxGroupComponent } from './yaux-form-checkbox-group/yaux-
     YauxFormLabelComponent,
     YauxFormElementWrapperComponent,
     YauxFormCheckboxComponent,
-    YauxFormCheckboxGroupComponent
+    YauxFormCheckboxGroupComponent,
+    YauxFormSectionComponent
   ],
   exports: [
     YauxFormRowComponent,
@@ -46,7 +48,8 @@ import { YauxFormCheckboxGroupComponent } from './yaux-form-checkbox-group/yaux-
     YauxFormSelectComponent,
     YauxFormLabelComponent,
     YauxFormElementWrapperComponent,
-    YauxFormCheckboxGroupComponent
+    YauxFormCheckboxGroupComponent,
+    YauxFormSectionComponent
   ]
 })
 export class YauxFormsModule { }
