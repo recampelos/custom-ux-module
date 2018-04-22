@@ -1,10 +1,10 @@
 <div *ngIf="orientationTypes.VERTICAL === orientation" class="checkbox" [formGroup]="formGroup">
   <label>
-    <input formControlName="{{formControlName}}" value="{{checkboxValue}}" [checked]="checked" name="{{name}}" type="checkbox" id="{{id}}" (click)="onValueChange($event)">
+    <input formControlName="{{formControlName}}" value="{{inputValue}}" [checked]="selected" name="{{name}}" type="checkbox" id="{{id}}" (click)="onValueChange($event)">
     <yaux-translate-text [key]="translationKey"></yaux-translate-text>
   </label>
 </div>
 <label *ngIf="orientationTypes.HRIZONTAL === orientation" class="checkbox-inline" [formGroup]="formGroup">
-  <input formControlName="{{formControlName}}" value="{{checkboxValue}}" [checked]="checked" name="{{name}}" type="checkbox" id="{{id}}" (click)="onValueChange($event)">
+  <input formControlName="{{formControlName}}" value="{{inputValue}}" [checked]="selected" name="{{name}}" type="checkbox" id="{{id}}" (click)="onValueChange($event)">
   <yaux-translate-text [key]="translationKey"></yaux-translate-text>
 </label>

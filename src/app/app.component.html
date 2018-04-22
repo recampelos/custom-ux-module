@@ -27,14 +27,15 @@
     </yaux-form-select>
   </yaux-form-row-->
   <yaux-form-row>
-    <yaux-form-checkbox-group
+    <yaux-form-radio-group
       [id]="'input'"
+      [name]="'input'"
       [formGroup]="formGroup"
       [value]="model.myInput"
       [items]="items"
       [orientation]="'horizontal'"
       (valueChange)="model.myInput = $event"
-    ></yaux-form-checkbox-group>
+    ></yaux-form-radio-group>
   </yaux-form-row>
 
   <div>{{model | json}}</div>

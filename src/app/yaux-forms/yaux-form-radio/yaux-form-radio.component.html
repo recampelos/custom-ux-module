@@ -1,11 +1,10 @@
-<div *ngIf="!inline" class="checkbox">
+<div *ngIf="orientationTypes.VERTICAL === orientation" class="checkbox">
   <label>
-    <input type="checkbox" value="{{value}}" id="{{id}}" name={{name}}>
-    <yaux-form-label [for]="id" [translationKey]="translationKey"></yaux-form-label>
+    <input type="radio" value="{{value}}" id="{{id}}" name={{name}} [checked]="selected" (click)="onValueChange($event)">
+    <yaux-form-label [for]="id" [translationKey]="translationKey" [isRequired]="true"></yaux-form-label>
   </label>
 </div>
-<label *ngIf="inline" class="checkbox-inline">
-  <input type="checkbox" value="{{value}}" id="{{id}}" name={{name}}>
-  <yaux-form-label [for]="id" [translationKey]="translationKey"></yaux-form-label>
+<label *ngIf="orientationTypes.HRIZONTAL === orientation" class="checkbox-inline">
+  <input type="radio" value="{{value}}" id="{{id}}" name={{name}} [checked]="selected" (click)="onValueChange($event)">
+  <yaux-form-label [for]="id" [translationKey]="translationKey" [isRequired]="true"></yaux-form-label>
 </label>
-<yaux-form-error-container [formControl]="formControl" [formElementTranslationKey]="translationKey"></yaux-form-error-container>

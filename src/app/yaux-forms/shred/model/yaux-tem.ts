@@ -5,6 +5,7 @@ export interface Item {
   selected?: boolean;
 }
 
-export interface CheckBoxItem extends Item {
-  checkBoxValue?: any;
+export interface MultipleInputItem extends Item {
+  id: string;
+  inputValue?: any;
 }

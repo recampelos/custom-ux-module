@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import {CheckBoxItem, Item} from './yaux-forms/shred/model/yaux-tem';
+import {MultipleInputItem, Item} from './yaux-forms/shred/model/yaux-tem';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
@@ -22,16 +22,16 @@ export class AppComponent implements OnInit {
   });
 
   model = {
-    myInput: [],
+    myInput: ['op1'],
     myInput2: 'Input 2',
     myInput3: null
   };
 
   subject: Subject<Item[]> = new Subject<Item[]>();
 
-  items: CheckBoxItem[] = [
-    {key: 'op1', value: 'op1'},
-    {key: 'op2', value: 'op2'}
+  items: MultipleInputItem[] = [
+    {key: 'op1', value: 'op1', id: 'op1'},
+    {key: 'op2', value: 'op2', id: 'op2'}
   ]
 
   ngOnInit(): void {

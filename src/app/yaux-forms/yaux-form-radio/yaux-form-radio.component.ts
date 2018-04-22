@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import { YauxAbstractInputFormComponent } from '../shred/yaux-abstract-form-input-element';
+import {YauxAbstractSingleInputOrientedComponent} from '../shred/yaux-abstract-single-input-oriented-element';
 
 
 @Component({
@@ -8,8 +8,17 @@ import { YauxAbstractInputFormComponent } from '../shred/yaux-abstract-form-inpu
   templateUrl: './yaux-form-radio.component.html',
   styleUrls: ['./yaux-form-radio.component.sass']
 })
-export class YauxFormRadioComponent extends YauxAbstractInputFormComponent {
+export class YauxFormRadioComponent extends YauxAbstractSingleInputOrientedComponent {
 
-  @Input() inline = false;
+  protected updateSelectedState(): void {
+    this.selected = (this.value === this.inputValue);
+  }
 
+  protected processValue(): void {
+    if (this.selected) {
+      this.value = this.inputValue;
+    } else {
+      this.value = null;
+    }
+  }
 }
