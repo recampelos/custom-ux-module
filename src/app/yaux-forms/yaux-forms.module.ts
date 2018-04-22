@@ -43,11 +43,9 @@ import { YauxFormCheckboxGroupComponent } from './yaux-form-checkbox-group/yaux-
     YauxFormInputComponent,
     YauxFormTextareaComponent,
     YauxFormRadioGroupComponent,
-    YauxFormRadioComponent,
     YauxFormSelectComponent,
     YauxFormLabelComponent,
     YauxFormElementWrapperComponent,
-    YauxFormCheckboxComponent,
     YauxFormCheckboxGroupComponent
   ]
 })
