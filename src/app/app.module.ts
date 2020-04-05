@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { YauxFormsModule } from './yaux-forms/yaux-forms.module';
 
-
 @NgModule({
   declarations: [
     AppComponent

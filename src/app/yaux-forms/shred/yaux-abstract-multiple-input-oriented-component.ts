@@ -1,9 +1,9 @@
 import {Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 
 import { YauxAbstractInputOrientedComponent } from './yaux-abstract-form-input-oriented-element';
 import { MultipleInputItem } from './model/yaux-tem';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 export class YauxAbstractMultipleInputOrientedComponent extends YauxAbstractInputOrientedComponent implements OnInit {
 

@@ -1,7 +1,6 @@
 // External modules
-import { Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { Input, OnInit, } from '@angular/core';
+import { Observable } from 'rxjs';
 // Internal modules
 import { Item } from './model/yaux-tem';
 import { YauxAbstractInputFormComponent } from './yaux-abstract-form-input-element';
